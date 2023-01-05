@@ -7,6 +7,7 @@
     <title>EmployeePayrollForm</title>
     <link rel="stylesheet" href="../CSS/EmployeeRegister.css">
 </head>
+<!-- uc1 -->
 <body>     
     <header class="header-content header">
         <div class="logo-content ">
@@ -27,7 +28,7 @@
                 <input class="input" type="text" id="name" name="name" placeholder="your name ..." required>
             </div>
 
-
+<!-- uc2 -->
             <div class="row-content">
                 <label class="label text" for="profile">Profile image</label>
                 <div class="profile-radio-content">
@@ -53,8 +54,38 @@
                     </label>
                 </div>
             </div>
+<!-- uc3 -->
+            <div class="row-content">
+                <label class="label text" for="gender">Gender</label>
+                <div>
+                    <input type="radio"id="male" name="gender"value="male">
+                    <lable class="text" for="male">Male</lable>
+                    <input type="radio" id="female" name="gender"value="female">
+                    <lable class="text" for="female">Female</lable>
+                </div>
+            </div>
+<!-- uc4 -->
+            <div class="row-content">
+                <label class="label text" for="department">Department</label>
+                <div>
+                    <input class="checkbox" type="checkbox" id="hr" name="department" value="HR" title="mark to which you belong">
+                    <label class="text" for="hr">HR</label>
+                    <input class="checkbox" type="checkbox" id="sales" name="department" value="Sales" title="mark to which you belong">
+                    <label class="text" for="sales">Sales</label>
+                    <input class="checkbox" type="checkbox" id="finance" name="department" value="Finance" title="mark to which you belong">
+                    <label class="text" for="finance">Finance</label>
+                    <input class="checkbox" type="checkbox" id="engineer" name="department" value="Engineer" title="mark to which you belong">
+                    <label class="text" for="engineer">Engineer</label>
+                    <input class="checkbox" type="checkbox" id="others" name="department" value="Others" title="mark to which you belong">
+                    <label class="text" for="others">Others</label>
+                </div>
+            </div>
 
-
+            <div class="row-content">
+                <label class="label text" for="salary">Choose your salary</label>
+                <input title="select range" class="input" type="range" name="salary" id="salary" min="300000" max="500000" step="100" value="450000">
+                <salary-output class="salary-output" id="salaryOutput" value="400000">400000</salary-output>
+            </div>
         </form>
     </div>
 </body>

@@ -106,7 +106,7 @@ label {
     resize: vertical;
 }
 
-/*  uc3  */
+/*  uc3  uc4  */
 
 .profile-radio-content {
     display: flex;
@@ -124,3 +124,4 @@ label {
     border-radius: 50%;
     margin-left: 12px;
 }
+
