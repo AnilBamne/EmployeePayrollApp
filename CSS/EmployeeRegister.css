@@ -180,3 +180,40 @@ error-output
     padding: 1px 3px 1px 3px;
     border-radius: 3px;
 }
+
+/* applying media quaries */
+@media only screen and (max-width: 960px){
+    .cancelButton{
+        margin-left: opx;
+    }
+    .form{
+        width: 85%;
+        padding: 44px 20px;
+    }
+}
+@media only screen and (max-width:600px) {
+.form{margin-top:10px}
+.row{flex-direction: column;}
+.profile-radio-content{flex-flow: wrap;}
+.submit-reset{width: 100%;
+    display: flex;
+    flex-grow: 1;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    margin-bottom: 20px;}
+    .submitButtton
+    {
+        margin: 0;
+    }
+    .buttonParent{
+        flex-direction: column-reverse;
+        align-items: flex-start;
+    }
+}
+
+/* uc7 button-ux-design  */
+.button-ux-design{
+    border-radius: 5px;
+    border: 1px solid #239b6b;
+    background: #d1d2cd 0% 0% no-repeat padding-box;
+}
