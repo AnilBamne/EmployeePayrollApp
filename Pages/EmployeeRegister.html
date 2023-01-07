@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>EmployeePayrollForm</title>
     <link rel="stylesheet" href="../CSS/EmployeeRegister.css">
+    <script src="../JS/EmployeeRegister.js"></script>
 </head>
 <!-- uc1 -->
 <body>     
@@ -19,13 +20,14 @@
         </div>
     </header>
     <div class="form-content">
-        <form class="form" action="#">
+        <form class="form" action="#" onreset="resetForm()" onsubmit="save()">
             <div class="form-head">
                 Employee Payroll Form
             </div>
             <div class="row-content">
                 <label class="lable text" for="name">Name</label>
                 <input class="input" type="text" id="name" name="name" placeholder="your name ..." required>
+                <error-output class="text-error" for="text"></error-output>
             </div>
 
 <!-- uc2 -->
@@ -91,7 +93,6 @@
                 <label class="label text" for="startDate">Start Date</label>
                 <div>
                     <select id="day" name="Day">
-                        <option value="Day">Day</option>
                         <option value='01'>01</option>
                         <option value='02'>02</option>
                         <option value='03'>03</option>
@@ -125,7 +126,6 @@
                         <option value='31'>31</option>
                     </select>
                     <select id="month" name="Month">
-                        <option value="Month">Month</option>
                         <option value='01'>January</option>
                         <option value='02'>February</option>
                         <option value='03'>March</option>
@@ -140,7 +140,6 @@
                         <option value='12'>December</option>
                     </select>
                     <select id="year" name="Year">
-                        <option value="Year">Year</option>
                         <option value='2020'>2020</option>
                         <option value='2019'>2019</option>
                         <option value='2018'>2018</option>
@@ -168,12 +167,24 @@
     </div>
     <!-- uc7 Adding event listener to salary range -->
     <script>
-        const salary=document.querySelector('#salary');
-        const output=document.querySelector('.salary-output')
-        output.textContent=salary.value;
-        salary.addEventListener('input',function(){
-            output.textContent=salary.value;
+        const text = document.querySelector("#name");
+            const textError = document.querySelector(".text-error");
+            text.addEventListener("input", function () {
+                let nameRegex = new RegExp("^[A-Z]{1}[a-z]{2,}$");
+                if (nameRegex.test(text.value)) {
+                    textError.textContent = "";
+                } else {
+                    textError.textContent =
+                        "Name should have min 3 characters and start with Capital letters.";
+                }
+            });
+        const salary = document.querySelector('#salary');
+        const output = document.querySelector('.salary-output');
+        output.textContent = salary.value;
+        salary.addEventListener('input', function () {
+            output.textContent = salary.value;
         });
     </script>
+    
 </body>
 </html>
