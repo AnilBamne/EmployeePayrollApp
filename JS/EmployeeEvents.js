@@ -103,3 +103,28 @@ function createAndUpdateStorage(employeePayrollData)
     alert(employeePayrollList.toString());
     localStorage.setItem("EmployeePayrollList",JSON.stringify(employeePayrollList));
 }
+
+//UC Ability to reset the form when clicked on reset button
+const resetForm =()=>{
+    setValue('#name',"");
+    unsetSelectedValues('[name=profile]');
+    unsetSelectedValues('[name=gender]');
+    unsetSelectedValues('[name=department]');
+    setValue('#salary','');
+    setValue('#note','');
+    setValue('#day','1');
+    setValue('#month','January');
+    setValue('#year','2023');
+    alert("reset done");
+}
+
+const setValue=(id,value)=>
+{
+    const element = document.querySelector(id);
+    element.value=value;
+}
+const unsetSelectedValues=(propertyValue)=>{
+    let allItems=document.querySelectorAll(propertyValue);
+    allItems.forEach(item=>{item.checked=false;});
+    
+}
