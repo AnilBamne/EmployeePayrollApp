@@ -50,7 +50,7 @@ class EmployeePayrollData
     {
         return this._department;
     }
-    set gender(department)
+    set department(department)
     {
         this._department=department;
     }
@@ -61,7 +61,7 @@ class EmployeePayrollData
     }
     set salary(salary)
     {
-        this._saary=salary;
+        this._salary=salary;
     }
 
     get note()
@@ -73,16 +73,13 @@ class EmployeePayrollData
         this._note=note;
     }
 
-    set start_date(start_date) 
+    get startDate()
     {
-        if (startDate <= new Date())        //checking for future date
-        {
-            this._startDate = startDate;
-        }
-        else 
-        {
-            throw 'Date can not be of future';
-        }
+        return this._startDate;
+    }
+    set startDate(startDate)
+    {
+        this._startDate=startDate;
     }
 
 
@@ -90,9 +87,9 @@ class EmployeePayrollData
     {
         const options = { year: 'numeric', month: 'long', day: 'numeric' };
         const empDate = !this.start_date ? "undefined" :
-            this.start_date.toLocaleDateString("en-US", options);
+            this.start_date.toLocaleDateString("en-GB", options);
         return 'Name = ' + this.name + ", Gender = " + this.gender + ", ProfilePic = " + this.profilePic
             + ", Department = " + this.department + ", Salary = " + this.salary +
-            ", StartDate = " + empDate + ", Note = " + this.note;
+            ", StartDate = " + this.startDate + ", Note = " + this.note;
     }
 }
