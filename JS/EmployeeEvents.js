@@ -85,3 +85,21 @@ const getInputValueById=(id)=>
     let value=document.querySelector(id).value;
     return value;
 }
+
+
+//UC4 emp data Storing into local storage
+//created a function to fetch list of employee payroll data and store it in Localstorage.
+function createAndUpdateStorage(employeePayrollData)
+{
+    let employeePayrollList=JSON.parse(localStorage.getItem("EmployeePayrollList"));
+    if(employeePayrollList !=undefined)
+    {
+        employeePayrollList.push(employeePayrollData);
+    }
+    else
+    {
+        employeePayrollList=[employeePayrollData];
+    }
+    alert(employeePayrollList.toString());
+    localStorage.setItem("EmployeePayrollList",JSON.stringify(employeePayrollList));
+}
