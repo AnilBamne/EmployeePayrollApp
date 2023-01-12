@@ -2,196 +2,79 @@
 in a Tabular Format from JS File using
 Template Literals. - Use Template literal ES6 */
 
-window.addEventListener('DOMContentLoaded', (event) => { createInnerHtml(); });
+window.addEventListener('DOMContentLoaded', (event) => { 
+    createInnerHtml(); });                                      //calling function
 
-//Template literal ES6  (code to be wrritten in -> ``; )  way-1
-
-// const createInnerHtml = () => {
-//     const innerHtml = `             
-//         <tr>
-//             <th></th>
-//             <th>Name</th>
-//             <th>Gender</th>
-//             <th>Department</th>
-//             <th>Salary</th>
-//             <th>Start Date</th>
-//             <th>Actions</th>
-//         </tr>
-//         <tr>
-//             <td ><img class="profile"  src="../Assets/profile-images/Ellipse -2.png"></td>
-//             <td>Girish</td>
-//             <td>Male</td>
-//             <td>
-//                 <div class="dept-label">Engineer</div>
-//                 <div class="dept-label">Finance</div></td>
-//             <td>450000</td>
-//             <td> 1 Mar 2023</td>
-//             <td>
-//                 <img id="1" onclick="remove(this)" alt="delete" src="../Assets/icons/delete-black-18dp.svg">
-//                 <img id="1" onclick="update(this)" alt="edit" src="../Assets/icons/create-black-18dp.svg">
-//             </td>
-//         </tr>
-//         <tr>
-//             <td ><img class="profile"  src="../Assets/profile-images/Ellipse -1.png"></td>
-//             <td>Aneeta</td>
-//             <td>Female</td>
-//             <td>
-//                 <div class="dept-label">HR</div>
-//                 <div class="dept-label">Finance</div></td>
-//             <td>400000</td>
-//             <td> 3 Jan 2021</td>
-//             <td>
-//                 <img id="1" onclick="remove(this)" alt="delete" src="../Assets/icons/delete-black-18dp.svg">
-//                 <img id="1" onclick="update(this)" alt="edit" src="../Assets/icons/create-black-18dp.svg">
-//             </td>
-//         </tr>
-//             <tr>
-//             <td ><img class="profile"  src="../Assets/profile-images/Ellipse -3.png"></td>
-//             <td>Kapil</td>
-//             <td>Male</td>
-//             <td>
-//                 <div class="dept-label">Sales</div>
-//             <td>380000</td>
-//             <td> 1 Aug 2020</td>
-//             <td>
-//                 <img id="1" onclick="remove(this)" alt="delete" src="../Assets/icons/delete-black-18dp.svg">
-//                 <img id="1" onclick="update(this)" alt="edit" src="../Assets/icons/create-black-18dp.svg">
-//             </td>
-//         </tr>
-//         <tr>
-//             <td ><img class="profile"  src="../Assets/profile-images/Ellipse -7.png"></td>
-//             <td>Geetha</td>
-//             <td>Female</td>
-//             <td>
-//                 <div class="dept-label">Engineer</div>
-//                 <div class="dept-label">Finance</div></td>
-//             <td>410000</td>
-//             <td> 7 Jan 2023</td>
-//             <td>
-//                 <img id="1" onclick="remove(this)" alt="delete" src="../Assets/icons/delete-black-18dp.svg">
-//                 <img id="1" onclick="update(this)" alt="edit" src="../Assets/icons/create-black-18dp.svg">
-//             </td>
-//         </tr>
-//             <tr>
-//             <td ><img class="profile"  src="../Assets/profile-images/Ellipse -1.png"></td>
-//             <td>Anushka</td>
-//             <td>Female</td>
-//             <td>
-//                 <div class="dept-label">HR</div>
-//                 <div class="dept-label">Sales</div></td>
-//             <td>400000</td>
-//             <td> 3 Jan 2021</td>
-//             <td>
-//                 <img id="1" onclick="remove(this)" alt="delete" src="../Assets/icons/delete-black-18dp.svg">
-//                 <img id="1" onclick="update(this)" alt="edit" src="../Assets/icons/create-black-18dp.svg">
-//             </td>
-//         </tr>
-//             <tr>
-//             <td ><img class="profile"  src="../Assets/profile-images/Ellipse -3.png"></td>
-//             <td>Krishna</td>
-//             <td>Male</td>
-//             <td>
-//                 <div class="dept-label">Sales</div>
-//                 <div class="dept-label">Other</div>
-//             <td>380000</td>
-//             <td> 1 Aug 2020</td>
-//             <td>
-//                 <img id="1" onclick="remove(this)" alt="delete" src="../Assets/icons/delete-black-18dp.svg">
-//                 <img id="1" onclick="update(this)" alt="edit" src="../Assets/icons/create-black-18dp.svg">
-//             </td>
-//         </tr>
-//         `;
-//         document.querySelector('#table-display').innerHTML=innerHtml;
-// }
-
-//Template literal ES6  (code to be wrritten in -> ``; ) 1) way-2
-function createInnerHtml()
+//Template literal ES6  using json
+const createInnerHtml=()=>
 {
-    const headerHtml="<th></th><th>Name</th><th>Gender</th><th>Department</th><th>Salary</th><th>Start Date</th><th>Actions</th>";
-    let innerHtml=`${headerHtml}
-        <tr>
-            <td ><img class="profile"  src="../Assets/profile-images/Ellipse -2.png"></td>
-            <td>Girish</td>
-            <td>Male</td>
-            <td>
-                <div class="dept-label">Engineer</div>
-                <div class="dept-label">Finance</div></td>
-            <td>450000</td>
-            <td> 1 Mar 2023</td>
-            <td>
-                <img id="1" onclick="remove(this)" alt="delete" src="../Assets/icons/delete-black-18dp.svg">
-                <img id="1" onclick="update(this)" alt="edit" src="../Assets/icons/create-black-18dp.svg">
-            </td>
-        </tr>
-        <tr>
-            <td ><img class="profile"  src="../Assets/profile-images/Ellipse -1.png"></td>
-            <td>Aneeta</td>
-            <td>Female</td>
-            <td>
-                <div class="dept-label">HR</div>
-                <div class="dept-label">Finance</div></td>
-            <td>400000</td>
-            <td> 3 Jan 2021</td>
-            <td>
-                <img id="1" onclick="remove(this)" alt="delete" src="../Assets/icons/delete-black-18dp.svg">
-                <img id="1" onclick="update(this)" alt="edit" src="../Assets/icons/create-black-18dp.svg">
-            </td>
-        </tr>
+    const headerHtml= "<th></th><th>Name</th><th>Gender</th><th>Department</th><th>Salary</th><th>Start Date</th><th>Actions</th>";
+    let innerHtml=`${headerHtml}`;
+    let empPayrollList=createEmployeePayrollJSON();
+    for(const empPayrollData of empPayrollList)
+    {
+        innerHtml=`${innerHtml}
             <tr>
-            <td ><img class="profile"  src="../Assets/profile-images/Ellipse -3.png"></td>
-            <td>Kapil</td>
-            <td>Male</td>
-            <td>
-                <div class="dept-label">Sales</div>
-            <td>380000</td>
-            <td> 1 Aug 2020</td>
-            <td>
-                <img id="1" onclick="remove(this)" alt="delete" src="../Assets/icons/delete-black-18dp.svg">
-                <img id="1" onclick="update(this)" alt="edit" src="../Assets/icons/create-black-18dp.svg">
-            </td>
-        </tr>
-        <tr>
-            <td ><img class="profile"  src="../Assets/profile-images/Ellipse -7.png"></td>
-            <td>Geetha</td>
-            <td>Female</td>
-            <td>
-                <div class="dept-label">Engineer</div>
-                <div class="dept-label">Finance</div></td>
-            <td>410000</td>
-            <td> 7 Jan 2023</td>
-            <td>
-                <img id="1" onclick="remove(this)" alt="delete" src="../Assets/icons/delete-black-18dp.svg">
-                <img id="1" onclick="update(this)" alt="edit" src="../Assets/icons/create-black-18dp.svg">
-            </td>
-        </tr>
-            <tr>
-            <td ><img class="profile"  src="../Assets/profile-images/Ellipse -1.png"></td>
-            <td>Anushka</td>
-            <td>Female</td>
-            <td>
-                <div class="dept-label">HR</div>
-                <div class="dept-label">Sales</div></td>
-            <td>400000</td>
-            <td> 3 Jan 2021</td>
-            <td>
-                <img id="1" onclick="remove(this)" alt="delete" src="../Assets/icons/delete-black-18dp.svg">
-                <img id="1" onclick="update(this)" alt="edit" src="../Assets/icons/create-black-18dp.svg">
-            </td>
-        </tr>
-            <tr>
-            <td ><img class="profile"  src="../Assets/profile-images/Ellipse -3.png"></td>
-            <td>Krishna</td>
-            <td>Male</td>
-            <td>
-                <div class="dept-label">Sales</div>
-                <div class="dept-label">Other</div>
-            <td>380000</td>
-            <td> 1 Aug 2020</td>
-            <td>
-                <img id="1" onclick="remove(this)" alt="delete" src="../Assets/icons/delete-black-18dp.svg">
-                <img id="1" onclick="update(this)" alt="edit" src="../Assets/icons/create-black-18dp.svg">
-            </td>
-        </tr>
-    `;
+                <td><img class="profile" src="${empPayrollData._profilePic}" alt="" ></td>
+                <td>${empPayrollData._name}</td>
+                <td>${empPayrollData._gender}</td>
+                <td>${getDeptHtml(empPayrollData._department)}</td>
+                <td>${empPayrollData._salary}</td>
+                <td>${empPayrollData._startDate}</td>
+                <td>
+                    <img id="delete" onclick="remove(this)" src="../assets/icons/delete-black-18dp.svg" alt="delete">
+                    <img id="update" onclick="update(this)" src="../assets/icons/create-black-18dp.svg" alt="edit">
+                </td>
+            </tr>
+        `;
+    }
     document.querySelector('#table-display').innerHTML=innerHtml;
+}
+
+//employee details in JSON format
+const createEmployeePayrollJSON=()=>
+{
+    let empPayrollListLocal=[
+        {
+            _name:'Narayan M',
+            _gender:'male',
+            _department:['Engineering','Finance'],
+            _salary:'500000',
+            _startDate:'29 Oct 2019',
+            _note:'',
+            _id: new Date().getTime(),
+            _profilePic:'../assets/profile-images/Ellipse -2.png'
+        },
+        {
+            _name:'Tamannah Bhatiya',
+            _gender:'female',
+            _department:['sales'],
+            _salary:'400000',
+            _startDate:'29 Oct 2019',
+            _note:'',
+            _id: new Date().getTime()+1,
+            _profilePic:'../assets/profile-images/Ellipse -1.png'
+        },
+        {
+            _name:'Aneesh K',
+            _gender:'male',
+            _department:['Engineer'],
+            _salary:'430000',
+            _startDate:'29 Oct 2020',
+            _note:'',
+            _id: new Date().getTime()+1,
+            _profilePic:'../assets/profile-images/Ellipse -5.png'
+        }
+    ];
+    return empPayrollListLocal;
+}
+//gets list of departmenrts of employee
+const getDeptHtml=(deptList)=>
+{
+    let deptHtml='';
+    for(const dept of deptList)
+    {
+        deptHtml=`${deptHtml} <div class='dept-label'>${dept}</div>`
+    }
+    return deptHtml;
 }
