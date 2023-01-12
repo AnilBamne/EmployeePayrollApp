@@ -1,16 +1,29 @@
-/* Ability to view Employee Payroll details
+/*uc4: Ability to view Employee Payroll details
 in a Tabular Format from JS File using
 Template Literals. - Use Template literal ES6 */
-
+//uc5 : Display employee payroll data from JSON object
+//uc6 : Display employee payroll data from Local Storage
+let empPayrollList;
 window.addEventListener('DOMContentLoaded', (event) => { 
-    createInnerHtml(); });                                      //calling function
+    empPayrollList=getEmployeePayrollDataFromStorage();
+    document.querySelector(".emp-count").textContent=empPayrollList.length;
+    createInnerHtml(); 
+    localStorage.removeItem('editEmp');
+});
+//uc6
+const getEmployeePayrollDataFromStorage=()=>{
+    return localStorage.getItem('EmployeePayrollList')? JSON.parse(localStorage.getItem('EmployeePayrollList')):[];
+}
 
 //Template literal ES6  using json
 const createInnerHtml=()=>
 {
     const headerHtml= "<th></th><th>Name</th><th>Gender</th><th>Department</th><th>Salary</th><th>Start Date</th><th>Actions</th>";
+    if(empPayrollList.length==0) 
+    {
+        return;
+    }
     let innerHtml=`${headerHtml}`;
-    let empPayrollList=createEmployeePayrollJSON();
     for(const empPayrollData of empPayrollList)
     {
         innerHtml=`${innerHtml}
@@ -30,7 +43,7 @@ const createInnerHtml=()=>
     }
     document.querySelector('#table-display').innerHTML=innerHtml;
 }
-
+// uc5
 //employee details in JSON format
 const createEmployeePayrollJSON=()=>
 {
@@ -64,10 +77,21 @@ const createEmployeePayrollJSON=()=>
             _note:'',
             _id: new Date().getTime()+1,
             _profilePic:'../assets/profile-images/Ellipse -5.png'
+        },
+        {
+            _name:'Aneesh K',
+            _gender:'male',
+            _department:['Engineer'],
+            _salary:'430000',
+            _startDate:'29 Oct 2020',
+            _note:'',
+            _id: new Date().getTime()+1,
+            _profilePic:'../assets/profile-images/Ellipse -5.png'
         }
     ];
     return empPayrollListLocal;
 }
+
 //gets list of departmenrts of employee
 const getDeptHtml=(deptList)=>
 {
