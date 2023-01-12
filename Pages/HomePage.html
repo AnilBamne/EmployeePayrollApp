@@ -19,15 +19,43 @@
             </div>
         </div>
     </header>
-    <!-- uc2 -->
+    <!-- uc2 header and add button-->
     <div class="main-content">
         <divc class="head-content">
             <div class="employee-details">
                 Employee Details<div class="emp-count">10</div>
             </div>
-            <a href="../Pages/EmployeeRegister.html" class="add-button">
+            <a href="../Pages/EmployeeRegister.html" class="add-button add-center">
                 <img src="../Assets/icons/add-24px.svg" alt="Add">Add User</a>
         </div>
+    </div>
+    <!-- uc3 adding table -->
+    <div class="table-main">
+        <table id="display" class="table">
+            <tr>
+                <th></th>
+                <th>Name</th>
+                <th>Gender</th>
+                <th>Department</th>
+                <th>Salary</th>
+                <th>Start Date</th>
+                <th>Actions</th>
+            </tr>
+            <tr>
+                <td ><img class="profile"  src="../Assets/profile-images/Ellipse -2.png"></td>
+                <td>Girish</td>
+                <td>Male</td>
+                <td>
+                    <div class="dept-label">Engineer</div>
+                    <div class="dept-label">Finance</div></td>
+                <td>450000</td>
+                <td> 1 Mar 2023</td>
+                <td>
+                    <img id="1" onclick="remove(this)" alt="delete" src="../Assets/icons/delete-black-18dp.svg">
+                    <img id="1" onclick="update(this)" alt="edit" src="../Assets/icons/create-black-18dp.svg">
+                </td>
+            </tr>
+        </table>
     </div>
 </body>
 </html>
