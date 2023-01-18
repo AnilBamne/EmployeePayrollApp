@@ -12,7 +12,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
 });
 //uc6
 const getEmployeePayrollDataFromStorage=()=>{
-    return localStorage.getItem('EmployeePayrollList')? JSON.parse(localStorage.getItem('EmployeePayrollList')):[];
+    return localStorage.getItem('EmployeePayrollList') ? JSON.parse(localStorage.getItem('EmployeePayrollList')):[];
 }
 
 //Template literal ES6  using json
@@ -77,16 +77,6 @@ const createEmployeePayrollJSON=()=>
             _note:'',
             _id: new Date().getTime()+1,
             _profilePic:'../assets/profile-images/Ellipse -5.png'
-        },
-        {
-            _name:'Aneesh K',
-            _gender:'male',
-            _department:['Engineer'],
-            _salary:'430000',
-            _startDate:'29 Oct 2020',
-            _note:'',
-            _id: new Date().getTime()+1,
-            _profilePic:'../assets/profile-images/Ellipse -5.png'
         }
     ];
     return empPayrollListLocal;
@@ -101,4 +91,16 @@ const getDeptHtml=(deptList)=>
         deptHtml=`${deptHtml} <div class='dept-label'>${dept}</div>`
     }
     return deptHtml;
+}
+
+//Day48 UC1 -Delete Employee .
+const remove=(node) =>
+{
+    let empPayrollData = empPayrollList.find(empData=> empData._id == node._id);
+    if(!empPayrollData) return;
+    const index =empPayrollList.map(empData=>empData._id).indexOf(empPayrollData._id);
+    empPayrollList.splice(index,1);
+    localStorage.setItem("EmployeePayrollList",JSON.stringify(empPayrollList));
+    document.querySelector(".emp-count").textContent=empPayrollList.length;
+    createInnerHtml();
 }
